@@ -13,6 +13,7 @@ const {
 //GET all users
 router.route('/')
       .get(getUsers)
+      .post(createUser)
 
 //Get a single user by id
 router
@@ -21,14 +22,17 @@ router
 
 //Create a new user
 router
+    .route('/users')
     .post(createUser);
 
 //Update a user
 router
+    .route('/:userId')
     .put(updateUser);
 
 //Delete a user
 router  
+    .route('/:userId')
     .delete(deleteUser);
 
 //Add a friend
