@@ -11,7 +11,7 @@ const reactionSchema = new Schema (
         reationBody: {
             type: String,
             required: true,
-            maxLength: 250
+            maxLength: 280
         },
         username: {
             type: String,
@@ -37,7 +37,7 @@ const ThoughtSchema = new Schema(
             type: String,
             required: true,
             minLength: 1,
-            maxLength: 250
+            maxLength: 280
         },
         createdAt: {
             type: Date,
@@ -62,7 +62,8 @@ const ThoughtSchema = new Schema(
 )
 
 //get total count of reactions
-ThoughtSchema.virtual('reactionCount').get(function() {
+ThoughtSchema.virtual('reactionCount')
+             .get(function() {
     return this.reactions.length;
 });
 
