@@ -1,7 +1,7 @@
 const { Schema, model, Types } = require('mongoose');
 const moment = require('moment');
 
-const ReactionSchema = new Schema (
+const reactionSchema = new Schema (
     {
         //set custom Id
         reactionId: {
@@ -49,8 +49,8 @@ const ThoughtSchema = new Schema(
             type: String,
             required: true
         },
-        // Use ReactionSchema to validate data
-        reactions: [ReactionsSchema]
+        // Use reactionSchema to validate data
+        reactions: [reactionSchema]
     },
     {
         toJSON: {
