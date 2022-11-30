@@ -8,7 +8,7 @@ const reactionSchema = new Schema (
             type: Schema.Types.ObjectId,
             default: ()=> new Types.ObjectId()
         },
-        reationBody: {
+        reactionBody: {
             type: String,
             required: true,
             maxLength: 280
@@ -20,6 +20,7 @@ const reactionSchema = new Schema (
         createdAt: {
             type: Date,
             default: Date.now,
+            //Moment
             get: (createdAtVal) => moment(createdAtVal).format('MM DD, YYYY [at] hh:mm a')
         }
     },
